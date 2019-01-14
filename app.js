@@ -64,7 +64,6 @@ if (process.env.NODE_ENV === 'production') {
     console.log("job count", jobCount);
     try {
       res = await request.get(process.env.SPREADSHEET_URL).query({job_count: jobCount});
-      console.log(res);
     } catch (err) {
       console.log(err);
     }
