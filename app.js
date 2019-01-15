@@ -50,9 +50,9 @@ app.use(function(err, req, res, next) {
 });
 
 if (process.env.NODE_ENV === 'production') {
-  setInterval(function() {
-      request.get(process.env.HOME_URL);
-  }, 300000);
+  setInterval(async function() {
+      await request.get(process.env.HOME_URL);
+  }, 30000);
   
   const interval = parseInt(process.env.INTERVAL_IN_SECONDS) * 1000;
 
